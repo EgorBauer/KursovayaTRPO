@@ -23,7 +23,7 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
     ButtonBackTexture.loadFromFile("");
     ButtonCountTexture.loadFromFile("");
 
-    Sprite background(BackgroudTexture), internet(ButtonInternetTexture),
+    Sprite background(BackgroundTexture), internet(ButtonInternetTexture),
             mobile(ButtonMobileTexture), tv(ButtonTvTexture),
             develop(ButtonDevelopersTexture), exit(ButtonExitTexture);
 
@@ -110,12 +110,69 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
         window.draw(develop);
         window.draw(exit);
         window.display();
-    }      
+    }
 }
 
+// Menu developers risuem
+void dev(
+        RenderWindow& window,
+        Texture& BackgroundDevelopersTexture,
+        Texture& ButtonExitTexture,
+        Texture& ButtonBackTexture)
+{
+    Text text1;
+    Font font;
+    if (!font.loadFromFile("thirdparty/font/Shrift.ttf"))
+        return;
+    text1.setFont(font);
+    text1.setPosition(150.f, 325.f); // *Otredachit koordinati
+    text1.setString(
+            "Nikita Moniev: Developer of program logic\n\nEgor Bauer: Graphic "
+            "developer\n\nArtem Ivanov: Test coverage developer");
+    Sprite background(BackgroundDevelopersTexture), Exit(ButtonExitTexture),
+            Back(ButtonBackTexture);
+    int menuNum = 0;
+    background.setPosition(0, 0);
+    Exit.setPosition(530, 800); // *Otredachit koordinati
+    Back.setPosition(530, 800); // *Otredachit koordinati
+    while (window.isOpen()) {
+        Exit.setColor(Color::White);
+        Back.setColor(Color::White);
+        // *Otredachit koordinati
+        if (IntRect(530, 800, 954, 86).contains(Mouse::getPosition(window))) {
+            Exit.setColor(Color::Red);
+            menuNum = 1;
+        }
+        // *Otredachit koordinati
+        if (IntRect(530, 800, 954, 86).contains(Mouse::getPosition(window))) {
+            Back.setColor(Color::Red);
+            menuNum = 2;
+        }
 
-void dev(RenderWindow& window, Texture& BackgroundDevelopersTexture, Texture& ButtonExitTexture, Texture& ButtonBackTexture) // Menu developers risuem 
-
-
-
+        if (Mouse::isButtonPressed(Mouse::Left)) {
+            if (menuNum == 1) {
+                isMenu = 1;
+                menu(window);
+            }
+        }
+        // Posmotret kak vozrashat v iznachalnoe menu
+        if (Mouse::isButtonPressed(Mouse::Left)) {
+            if (menuNum == 2) {
+                isMenu = 0;
+                menu(window);
+            }
+        }
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
+                window.close();
+        }
+        window.clear();
+        window.draw(background);
+        window.draw(text1);
+        window.draw(Exit);
+        window.draw(Back);
+        window.display();
+    }
+}
 
