@@ -110,5 +110,12 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
         window.draw(develop);
         window.draw(exit);
         window.display();
-    }
+    }      
 }
+
+
+void dev(RenderWindow& window, Texture& BackgroundDevelopersTexture, Texture& ButtonExitTexture, Texture& ButtonBackTexture) // Menu developers risuem 
+
+
+
+
