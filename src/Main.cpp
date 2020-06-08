@@ -2,7 +2,7 @@
 
 int main()
 {
-    RenderWindow window(VideoMode(1500, 900), "Optimal cost-based tariff");
+    RenderWindow window(VideoMode(1000, 600), "Optimal cost-based tariff");
 
     return 0;
 }
