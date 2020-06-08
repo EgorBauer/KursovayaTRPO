@@ -175,4 +175,3 @@ void dev(
         window.display();
     }
 }
-
