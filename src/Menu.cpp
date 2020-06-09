@@ -65,27 +65,27 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
         }
 
         if (Mouse::isButtonPressed(Mouse::Left)) {
-            if (menuNum == 1) {
+            /*if (menuNum == 1) {
                 isMenu = 0;
                 inter(window,
                       BackgroundInternetTexture,
-                      ButtonExitTexture,
-                      ButtonBackTexture);
+                      ButtonBackTexture,
+                      ButtonCountTexture);
             }
             if (menuNum == 2) {
                 isMenu = 0;
                 mob(window,
                     BackgroundMobileTexture,
-                    ButtonExitTexture,
-                    ButtonBackTexture);
+                    ButtonBackTexture,
+                    ButtonCountTexture);
             }
             if (menuNum == 3) {
                 isMenu = 0;
                 telev(window,
                       BackgroundTvTexture,
-                      ButtonExitTexture,
-                      ButtonBackTexture);
-            }
+                      ButtonBackTexture,
+                      ButtonCountTexture);
+            } */
             if (menuNum == 4) {
                 isMenu = 0;
                 dev(window,
@@ -151,14 +151,12 @@ void dev(
 
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
-                isMenu = 1;
-                menu(window);
+                window.close();
             }
         }
-        // Posmotret kak vozrashat v iznachalnoe menu
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
-                isMenu = 0;
+                isMenu = 1;
                 menu(window);
             }
         }
@@ -174,4 +172,28 @@ void dev(
         window.draw(Back);
         window.display();
     }
+}
+
+void inter(
+        RenderWindow& window,
+        Texture& BackgroundInternetTexture,
+        Texture& ButtonBackTexture,
+        Texture& ButtonCountTexture)
+{
+}
+
+void mob(
+        RenderWindow& window,
+        Texture& BackgroundMobileTexture,
+        Texture& ButtonBackTexture,
+        Texture& ButtonCountTexture)
+{
+}
+
+void telev(
+        RenderWindow& window,
+        Texture& BackgroundTvTexture,
+        Texture& ButtonBackTexture,
+        Texture& ButtonCountTexture)
+{
 }
