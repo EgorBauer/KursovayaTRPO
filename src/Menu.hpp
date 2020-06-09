@@ -25,5 +25,5 @@ void telev(
         RenderWindow& window,
         Texture& BackgroundTvTexture,
         Texture& ButtonBackTexture,
-        Texture& ButtonCountTexture);                        
+        Texture& ButtonCountTexture);
 #endif
