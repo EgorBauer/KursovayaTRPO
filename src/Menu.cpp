@@ -1,4 +1,5 @@
 #include "Menu.hpp"
+#include "RadioBut.hpp"
 
 int isMenu = 0;
 
@@ -85,7 +86,7 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
                       BackgroundTvTexture,
                       ButtonBackTexture,
                       ButtonCountTexture);
-            } 
+            }
             if (menuNum == 4) {
                 isMenu = 1;
                 dev(window,
@@ -139,6 +140,7 @@ void dev(
         Exit.setColor(Color::White);
         Back.setColor(Color::White);
         // *Otredachit koordinati
+        menuNum = 0;
         if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
             Exit.setColor(Color::Red);
             menuNum = 1;
@@ -175,9 +177,7 @@ void dev(
 }
 
 // Posledneya menu
-void result(
-
-
+// void result(
 
 void inter(
         RenderWindow& window,
@@ -187,6 +187,8 @@ void inter(
 {
     Sprite background(BackgroundInternetTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
+    radio button;  
+    radio button1;      
     int menuNum = 0;
     background.setPosition(0, 0);
     Back.setPosition(30, 500);   // *Otredachit koordinati
@@ -195,6 +197,7 @@ void inter(
         Back.setColor(Color::White);
         Count.setColor(Color::White);
         // *Otredachit koordinati
+        menuNum = 0;
         if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
             Count.setColor(Color::Red);
             menuNum = 1;
@@ -229,6 +232,8 @@ void inter(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
+        button.draw(50, 40, 80, 120, window);
+        button1.draw(100, 40, 80, 120, window);
         window.display();
     }
 }
@@ -249,6 +254,7 @@ void mob(
         Back.setColor(Color::White);
         Count.setColor(Color::White);
         // *Otredachit koordinati
+        menuNum = 0;
         if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
             Count.setColor(Color::Red);
             menuNum = 1;
@@ -303,6 +309,7 @@ void telev(
         Back.setColor(Color::White);
         Count.setColor(Color::White);
         // *Otredachit koordinati
+        menuNum = 0;
         if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
             Count.setColor(Color::Red);
             menuNum = 1;
