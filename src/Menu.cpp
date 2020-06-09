@@ -187,8 +187,8 @@ void inter(
 {
     Sprite background(BackgroundInternetTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
-    radio button;  
-    radio button1;      
+    radio button;
+    radio button1;
     int menuNum = 0;
     background.setPosition(0, 0);
     Back.setPosition(30, 500);   // *Otredachit koordinati
