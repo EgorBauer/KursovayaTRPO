@@ -10,4 +10,4 @@ build/Menu.o: src/RadioBut.hpp src/Menu.cpp
 	g++ -std=c++11 -Wall -Werror -c src/Menu.cpp -o build/src/Menu.o
 	
 build/RadioBut.o: src/RadioBut.hpp	
-	g++ -std=c++11 -Wall -Werror build/src/RadioBut.hpp -o build/src/RadioBut.o -lsfml-graphics -lsfml-window -lsfml-system		
+	g++ -std=c++11 -Wall -Werror build/src/RadioBut.hpp -o build/src/RadioBut.o -lsfml-graphics -lsfml-window -lsfml-system
