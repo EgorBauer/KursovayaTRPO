@@ -10,31 +10,31 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
             ButtonBackTexture, ButtonCountTexture, BackgroundInternetTexture,
             BackgroundMobileTexture, BackgroundTvTexture,
             BackgroundDevelopersTexture;
-    // *Nujno budet dobavit image
+
     BackgroundTexture.loadFromFile("image/Fon.jpg");
-    BackgroundInternetTexture.loadFromFile("image/Fon.jpg");
-    BackgroundMobileTexture.loadFromFile("");
-    BackgroundTvTexture.loadFromFile("");
-    BackgroundDevelopersTexture.loadFromFile("image/Fon.jpg");
-    ButtonInternetTexture.loadFromFile("image/Knopka.jpg");
-    ButtonMobileTexture.loadFromFile("image/Knopka.jpg");
-    ButtonTvTexture.loadFromFile("image/Knopka.jpg");
-    ButtonDevelopersTexture.loadFromFile("image/Knopka.jpg");
-    ButtonExitTexture.loadFromFile("image/Knopka.jpg");
-    ButtonBackTexture.loadFromFile("image/Knopka.jpg");
-    ButtonCountTexture.loadFromFile("image/Knopka.jpg");
+    BackgroundInternetTexture.loadFromFile("image/FonInternet.jpg");
+    BackgroundMobileTexture.loadFromFile("image/FonMobile.jpg");
+    BackgroundTvTexture.loadFromFile("image/FonTV.jpg");
+    BackgroundDevelopersTexture.loadFromFile("image/FonDevelopers.jpg");
+    ButtonInternetTexture.loadFromFile("image/Internetknopka.png");
+    ButtonMobileTexture.loadFromFile("image/Mobileknopka.png");
+    ButtonTvTexture.loadFromFile("image/TVknopka.png");
+    ButtonDevelopersTexture.loadFromFile("image/Developersknopka.png");
+    ButtonExitTexture.loadFromFile("image/Exitknopka.png");
+    ButtonBackTexture.loadFromFile("image/Backknopka.png");
+    ButtonCountTexture.loadFromFile("image/Countknopka.png");
 
     Sprite background(BackgroundTexture), internet(ButtonInternetTexture),
             mobile(ButtonMobileTexture), tv(ButtonTvTexture),
             develop(ButtonDevelopersTexture), exit(ButtonExitTexture);
 
-    int menuNum = 0; // *Nujno podstavit koordinati knopok
+    int menuNum = 0;
     background.setPosition(0, 0);
-    internet.setPosition(100, 200);
-    mobile.setPosition(100, 300);
-    tv.setPosition(100, 400);
-    develop.setPosition(630, 400);
-    exit.setPosition(630, 500);
+    internet.setPosition(90, 200);
+    mobile.setPosition(90, 300);
+    tv.setPosition(90, 400);
+    develop.setPosition(810, 440);
+    exit.setPosition(810, 500);
 
     while (window.isOpen()) {
         internet.setColor(Color::White);
@@ -43,24 +43,24 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
         develop.setColor(Color::White);
         exit.setColor(Color::White);
 
-        menuNum = 0; // *Nujno podstavit koordinati knopok dly vseh if
-        if (IntRect(100, 200, 470, 90).contains(Mouse::getPosition(window))) {
+        menuNum = 0;
+        if (IntRect(90, 200, 220, 48).contains(Mouse::getPosition(window))) {
             internet.setColor(Color::Red);
             menuNum = 1;
         }
-        if (IntRect(100, 300, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(90, 300, 220, 48).contains(Mouse::getPosition(window))) {
             mobile.setColor(Color::Red);
             menuNum = 2;
         }
-        if (IntRect(100, 400, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(90, 400, 220, 48).contains(Mouse::getPosition(window))) {
             tv.setColor(Color::Red);
             menuNum = 3;
         }
-        if (IntRect(630, 400, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(810, 440, 153, 48).contains(Mouse::getPosition(window))) {
             develop.setColor(Color::Red);
             menuNum = 4;
         }
-        if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(810, 500, 153, 48).contains(Mouse::getPosition(window))) {
             exit.setColor(Color::Red);
             menuNum = 5;
         }
@@ -71,21 +71,27 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
                 inter(window,
                       BackgroundInternetTexture,
                       ButtonBackTexture,
-                      ButtonCountTexture);
+                      ButtonCountTexture,
+                      BackgroundTexture,
+                      ButtonExitTexture);
             }
             if (menuNum == 2) {
                 isMenu = 3;
                 mob(window,
                     BackgroundMobileTexture,
                     ButtonBackTexture,
-                    ButtonCountTexture);
+                    ButtonCountTexture,
+                    BackgroundTexture,
+                    ButtonExitTexture);
             }
             if (menuNum == 3) {
                 isMenu = 4;
                 telev(window,
                       BackgroundTvTexture,
                       ButtonBackTexture,
-                      ButtonCountTexture);
+                      ButtonCountTexture,
+                      BackgroundTexture,
+                      ButtonExitTexture);
             }
             if (menuNum == 4) {
                 isMenu = 1;
@@ -126,7 +132,7 @@ void dev(
     if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
     text1.setFont(font);
-    text1.setPosition(150.f, 325.f); // *Otredachit koordinati
+    text1.setPosition(240.f, 240.f); // *Otredachit koordinati i dobavit text
     text1.setString(
             "Nikita Moniev: Developer of program logic\n\nEgor Bauer: Graphic "
             "developer\n\nArtem Ivanov: Test coverage developer");
@@ -134,19 +140,17 @@ void dev(
             Back(ButtonBackTexture);
     int menuNum = 0;
     background.setPosition(0, 0);
-    Exit.setPosition(630, 500); // *Otredachit koordinati
-    Back.setPosition(30, 500);  // *Otredachit koordinati
+    Exit.setPosition(810, 500);
+    Back.setPosition(40, 500);
     while (window.isOpen()) {
         Exit.setColor(Color::White);
         Back.setColor(Color::White);
-        // *Otredachit koordinati
         menuNum = 0;
-        if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(810, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Exit.setColor(Color::Red);
             menuNum = 1;
         }
-        // *Otredachit koordinati
-        if (IntRect(30, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(40, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Back.setColor(Color::Red);
             menuNum = 2;
         }
@@ -180,7 +184,9 @@ void inter(
         RenderWindow& window,
         Texture& BackgroundInternetTexture,
         Texture& ButtonBackTexture,
-        Texture& ButtonCountTexture)
+        Texture& ButtonCountTexture,
+        Texture& BackgroundTexture,
+        Texture& ButtonExitTexture)
 {
     Sprite background(BackgroundInternetTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
@@ -189,19 +195,17 @@ void inter(
     radio button2;
     int menuNum = 0;
     background.setPosition(0, 0);
-    Back.setPosition(30, 500);   // *Otredachit koordinati
-    Count.setPosition(630, 500); // *Otredachit koordinati
+    Back.setPosition(40, 500);
+    Count.setPosition(810, 500);
     while (window.isOpen()) {
         Back.setColor(Color::White);
         Count.setColor(Color::White);
-        // *Otredachit koordinati
         menuNum = 0;
-        if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(810, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Count.setColor(Color::Red);
             menuNum = 1;
         }
-        // *Otredachit koordinati
-        if (IntRect(30, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(40, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Back.setColor(Color::Red);
             menuNum = 2;
         }
@@ -214,7 +218,7 @@ void inter(
                        ButtonExitTexture,
                        ButtonBackTexture);
             }
-        } 
+        }
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
                 isMenu = 0;
@@ -230,7 +234,7 @@ void inter(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
-        // izmenit koordinati
+        // *izmenit koordinati i dobavit text dlya knopok
         button.draw(50, 40, 80, 120, window);
         button1.draw(120, 40, 80, 120, window);
         button2.draw(190, 40, 80, 120, window);
@@ -242,7 +246,9 @@ void mob(
         RenderWindow& window,
         Texture& BackgroundMobileTexture,
         Texture& ButtonBackTexture,
-        Texture& ButtonCountTexture)
+        Texture& ButtonCountTexture,
+        Texture& BackgroundTexture,
+        Texture& ButtonExitTexture)
 {
     Sprite background(BackgroundMobileTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
@@ -251,19 +257,17 @@ void mob(
     radio button2;
     int menuNum = 0;
     background.setPosition(0, 0);
-    Back.setPosition(30, 500);   // *Otredachit koordinati
-    Count.setPosition(630, 500); // *Otredachit koordinati
+    Back.setPosition(40, 500);
+    Count.setPosition(810, 500);
     while (window.isOpen()) {
         Back.setColor(Color::White);
         Count.setColor(Color::White);
-        // *Otredachit koordinati
         menuNum = 0;
-        if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(810, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Count.setColor(Color::Red);
             menuNum = 1;
         }
-        // *Otredachit koordinati
-        if (IntRect(30, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(40, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Back.setColor(Color::Red);
             menuNum = 2;
         }
@@ -276,7 +280,7 @@ void mob(
                        ButtonExitTexture,
                        ButtonBackTexture);
             }
-        } 
+        }
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
                 isMenu = 0;
@@ -292,7 +296,7 @@ void mob(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
-        // izmenit koordinati
+        // *izmenit koordinati i dobavit text dlya knopok
         button.draw(50, 40, 80, 120, window);
         button1.draw(120, 40, 80, 120, window);
         button2.draw(190, 40, 80, 120, window);
@@ -304,7 +308,9 @@ void telev(
         RenderWindow& window,
         Texture& BackgroundTvTexture,
         Texture& ButtonBackTexture,
-        Texture& ButtonCountTexture)
+        Texture& ButtonCountTexture,
+        Texture& BackgroundTexture,
+        Texture& ButtonExitTexture)
 {
     Sprite background(BackgroundTvTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
@@ -313,19 +319,17 @@ void telev(
     radio button2;
     int menuNum = 0;
     background.setPosition(0, 0);
-    Back.setPosition(30, 500);   // *Otredachit koordinati
-    Count.setPosition(630, 500); // *Otredachit koordinati
+    Back.setPosition(40, 500);
+    Count.setPosition(810, 500);
     while (window.isOpen()) {
         Back.setColor(Color::White);
         Count.setColor(Color::White);
-        // *Otredachit koordinati
         menuNum = 0;
-        if (IntRect(630, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(810, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Count.setColor(Color::Red);
             menuNum = 1;
         }
-        // *Otredachit koordinati
-        if (IntRect(30, 500, 470, 90).contains(Mouse::getPosition(window))) {
+        if (IntRect(40, 500, 153, 48).contains(Mouse::getPosition(window))) {
             Back.setColor(Color::Red);
             menuNum = 2;
         }
@@ -338,7 +342,7 @@ void telev(
                        ButtonExitTexture,
                        ButtonBackTexture);
             }
-        } 
+        }
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
                 isMenu = 0;
@@ -354,7 +358,7 @@ void telev(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
-        // izmenit koordinati
+        // *izmenit koordinati i dobavit text dlya knopok
         button.draw(50, 40, 80, 120, window);
         button1.draw(120, 40, 80, 120, window);
         button2.draw(190, 40, 80, 120, window);
@@ -362,13 +366,52 @@ void telev(
     }
 }
 
-// Posledneya menu
+// Posledneya menu dobavti vivod podhodyashevo tarifa v vide teksta
 void result(
         RenderWindow& window,
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture,
         Texture& ButtonBackTexture)
 {
+    Sprite background(BackgroundTexture), Exit(ButtonExitTexture),
+            Back(ButtonBackTexture);
+    int menuNum = 0;
+    background.setPosition(0, 0);
+    Exit.setPosition(420, 500);
+    Back.setPosition(40, 500);
+    while (window.isOpen()) {
+        Exit.setColor(Color::White);
+        Back.setColor(Color::White);
+        menuNum = 0;
+        if (IntRect(420, 500, 153, 48).contains(Mouse::getPosition(window))) {
+            Exit.setColor(Color::Red);
+            menuNum = 1;
+        }
+        if (IntRect(40, 500, 153, 48).contains(Mouse::getPosition(window))) {
+            Back.setColor(Color::Red);
+            menuNum = 2;
+        }
 
-
+        if (Mouse::isButtonPressed(Mouse::Left)) {
+            if (menuNum == 1) {
+                window.close();
+            }
+        }
+        if (Mouse::isButtonPressed(Mouse::Left)) {
+            if (menuNum == 2) {
+                isMenu = 0;
+                menu(window);
+            }
+        }
+        Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == Event::Closed)
+                window.close();
+        }
+        window.clear();
+        window.draw(background);
+        window.draw(Exit);
+        window.draw(Back);
+        window.display();
+    }
 }
