@@ -123,7 +123,7 @@ void dev(
 {
     Text text1;
     Font font;
-    if (!font.loadFromFile("thirdparty/font/Shrift.ttf"))
+    if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
     text1.setFont(font);
     text1.setPosition(150.f, 325.f); // *Otredachit koordinati
@@ -176,9 +176,6 @@ void dev(
     }
 }
 
-// Posledneya menu
-// void result(
-
 void inter(
         RenderWindow& window,
         Texture& BackgroundInternetTexture,
@@ -189,6 +186,7 @@ void inter(
             Count(ButtonCountTexture);
     radio button;
     radio button1;
+    radio button2;
     int menuNum = 0;
     background.setPosition(0, 0);
     Back.setPosition(30, 500);   // *Otredachit koordinati
@@ -208,7 +206,7 @@ void inter(
             menuNum = 2;
         }
 
-        /*if (Mouse::isButtonPressed(Mouse::Left)) {
+        if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
                 isMenu = 5;
                 result(window,
@@ -216,7 +214,7 @@ void inter(
                        ButtonExitTexture,
                        ButtonBackTexture);
             }
-        } */
+        } 
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
                 isMenu = 0;
@@ -232,8 +230,10 @@ void inter(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
+        // izmenit koordinati
         button.draw(50, 40, 80, 120, window);
-        button1.draw(100, 40, 80, 120, window);
+        button1.draw(120, 40, 80, 120, window);
+        button2.draw(190, 40, 80, 120, window);
         window.display();
     }
 }
@@ -246,6 +246,9 @@ void mob(
 {
     Sprite background(BackgroundMobileTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
+    radio button;
+    radio button1;
+    radio button2;
     int menuNum = 0;
     background.setPosition(0, 0);
     Back.setPosition(30, 500);   // *Otredachit koordinati
@@ -265,7 +268,7 @@ void mob(
             menuNum = 2;
         }
 
-        /*if (Mouse::isButtonPressed(Mouse::Left)) {
+        if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
                 isMenu = 5;
                 result(window,
@@ -273,7 +276,7 @@ void mob(
                        ButtonExitTexture,
                        ButtonBackTexture);
             }
-        } */
+        } 
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
                 isMenu = 0;
@@ -289,6 +292,10 @@ void mob(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
+        // izmenit koordinati
+        button.draw(50, 40, 80, 120, window);
+        button1.draw(120, 40, 80, 120, window);
+        button2.draw(190, 40, 80, 120, window);
         window.display();
     }
 }
@@ -301,6 +308,9 @@ void telev(
 {
     Sprite background(BackgroundTvTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
+    radio button;
+    radio button1;
+    radio button2;
     int menuNum = 0;
     background.setPosition(0, 0);
     Back.setPosition(30, 500);   // *Otredachit koordinati
@@ -320,7 +330,7 @@ void telev(
             menuNum = 2;
         }
 
-        /*if (Mouse::isButtonPressed(Mouse::Left)) {
+        if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
                 isMenu = 5;
                 result(window,
@@ -328,7 +338,7 @@ void telev(
                        ButtonExitTexture,
                        ButtonBackTexture);
             }
-        } */
+        } 
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 2) {
                 isMenu = 0;
@@ -344,6 +354,21 @@ void telev(
         window.draw(background);
         window.draw(Back);
         window.draw(Count);
+        // izmenit koordinati
+        button.draw(50, 40, 80, 120, window);
+        button1.draw(120, 40, 80, 120, window);
+        button2.draw(190, 40, 80, 120, window);
         window.display();
     }
+}
+
+// Posledneya menu
+void result(
+        RenderWindow& window,
+        Texture& BackgroundTexture,
+        Texture& ButtonExitTexture,
+        Texture& ButtonBackTexture)
+{
+
+
 }
