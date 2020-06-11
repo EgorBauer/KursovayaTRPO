@@ -1,5 +1,4 @@
 #include "Menu.hpp"
-#include "RadioBut.hpp"
 
 int isMenu = 0;
 
@@ -132,7 +131,7 @@ void dev(
     if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
     text1.setFont(font);
-    text1.setPosition(240.f, 240.f); // *Otredachit koordinati i dobavit text
+    text1.setPosition(240.f, 240.f);
     text1.setString(
             "Nikita Moniev: Developer of program logic\n\nEgor Bauer: Graphic "
             "developer\n\nArtem Ivanov: Test coverage developer");
@@ -188,6 +187,62 @@ void inter(
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture)
 {
+    Text text1;
+    Text text2;
+    Text text3;
+    Text text4;
+    Text text5;
+    Text text6;
+    Text text7;
+    Text text8;
+    Text text9;
+    Text text10;
+    Text text11;
+    Text text12;
+    Text text13;
+    Font font;
+    if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
+        return;
+    text1.setFont(font);
+    text1.setPosition(333.f, 65.f);
+    text1.setString("Answer these questions");
+    text2.setFont(font);
+    text2.setPosition(40.f, 120.f);
+    text2.setString("Desired price?");
+    text3.setFont(font);
+    text3.setPosition(370.f, 120.f);
+    text3.setString("Internet Speed?");
+    text4.setFont(font);
+    text4.setPosition(710.f, 100.f);
+    text4.setString("The presence\nof television?");
+    text5.setFont(font);
+    text5.setPosition(105.f, 180.f);
+    text5.setString("0-100");
+    text6.setFont(font);
+    text6.setPosition(105.f, 280.f);
+    text6.setString("100-500");
+    text7.setFont(font);
+    text7.setPosition(105.f, 380.f);
+    text7.setString("500-1000");
+    text8.setFont(font);
+    text8.setPosition(435.f, 180.f);
+    text8.setString("0-50");
+    text9.setFont(font);
+    text9.setPosition(435.f, 280.f);
+    text9.setString("50-100");
+    text10.setFont(font);
+    text10.setPosition(435.f, 380.f);
+    text10.setString("100-500");
+    text11.setFont(font);
+    text11.setPosition(775.f, 180.f);
+    text11.setString("Yes");
+    text12.setFont(font);
+    text12.setPosition(775.f, 280.f);
+    text12.setString("No");
+    text13.setFont(font);
+    text13.setPosition(775.f, 380.f);
+    text13.setString("Dont care");
+
     Sprite background(BackgroundInternetTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
     radio button;
@@ -213,10 +268,13 @@ void inter(
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
                 isMenu = 5;
+                GiveRes cnt;
+                cnt.internet_get_ans(button, button1, button2);
                 result(window,
                        BackgroundTexture,
                        ButtonExitTexture,
-                       ButtonBackTexture);
+                       ButtonBackTexture,
+                       cnt);
             }
         }
         if (Mouse::isButtonPressed(Mouse::Left)) {
@@ -232,12 +290,25 @@ void inter(
         }
         window.clear();
         window.draw(background);
+        window.draw(text1);
+        window.draw(text2);
+        window.draw(text3);
+        window.draw(text4);
+        window.draw(text5);
+        window.draw(text6);
+        window.draw(text7);
+        window.draw(text8);
+        window.draw(text9);
+        window.draw(text10);
+        window.draw(text11);
+        window.draw(text12);
+        window.draw(text13);
         window.draw(Back);
         window.draw(Count);
         // *izmenit koordinati i dobavit text dlya knopok
-        button.draw(50, 40, 80, 120, window);
-        button1.draw(120, 40, 80, 120, window);
-        button2.draw(190, 40, 80, 120, window);
+        button.draw(40, 180, 280, 380, window);
+        button1.draw(370, 180, 280, 380, window);
+        button2.draw(710, 180, 280, 380, window);
         window.display();
     }
 }
@@ -250,6 +321,61 @@ void mob(
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture)
 {
+    Text text1;
+    Text text2;
+    Text text3;
+    Text text4;
+    Text text5;
+    Text text6;
+    Text text7;
+    Text text8;
+    Text text9;
+    Text text10;
+    Text text11;
+    Text text12;
+    Text text13;
+    Font font;
+    if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
+        return;
+    text1.setFont(font);
+    text1.setPosition(333.f, 65.f);
+    text1.setString("Answer these questions");
+    text2.setFont(font);
+    text2.setPosition(40.f, 120.f);
+    text2.setString("Desired price?");
+    text3.setFont(font);
+    text3.setPosition(370.f, 120.f);
+    text3.setString("Amount of gigabytes?");
+    text4.setFont(font);
+    text4.setPosition(710.f, 120.f);
+    text4.setString("Amount of minutes?");
+    text5.setFont(font);
+    text5.setPosition(105.f, 180.f);
+    text5.setString("0-500");
+    text6.setFont(font);
+    text6.setPosition(105.f, 280.f);
+    text6.setString("500-1000");
+    text7.setFont(font);
+    text7.setPosition(105.f, 380.f);
+    text7.setString("1000-2000");
+    text8.setFont(font);
+    text8.setPosition(435.f, 180.f);
+    text8.setString("0-14");
+    text9.setFont(font);
+    text9.setPosition(435.f, 280.f);
+    text9.setString("15-31");
+    text10.setFont(font);
+    text10.setPosition(435.f, 380.f);
+    text10.setString("Unlimited");
+    text11.setFont(font);
+    text11.setPosition(775.f, 180.f);
+    text11.setString("0-500");
+    text12.setFont(font);
+    text12.setPosition(775.f, 280.f);
+    text12.setString("500-1000");
+    text13.setFont(font);
+    text13.setPosition(775.f, 380.f);
+    text13.setString("Unlimited");
     Sprite background(BackgroundMobileTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
     radio button;
@@ -275,10 +401,13 @@ void mob(
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
                 isMenu = 5;
+                GiveRes cnt;
+                cnt.mobile_get_ans(button, button1, button2);
                 result(window,
                        BackgroundTexture,
                        ButtonExitTexture,
-                       ButtonBackTexture);
+                       ButtonBackTexture,
+                       cnt);
             }
         }
         if (Mouse::isButtonPressed(Mouse::Left)) {
@@ -294,12 +423,24 @@ void mob(
         }
         window.clear();
         window.draw(background);
+        window.draw(text1);
+        window.draw(text2);
+        window.draw(text3);
+        window.draw(text4);
+        window.draw(text5);
+        window.draw(text6);
+        window.draw(text7);
+        window.draw(text8);
+        window.draw(text9);
+        window.draw(text10);
+        window.draw(text11);
+        window.draw(text12);
+        window.draw(text13);
         window.draw(Back);
         window.draw(Count);
-        // *izmenit koordinati i dobavit text dlya knopok
-        button.draw(50, 40, 80, 120, window);
-        button1.draw(120, 40, 80, 120, window);
-        button2.draw(190, 40, 80, 120, window);
+        button.draw(40, 180, 280, 380, window);
+        button1.draw(370, 180, 280, 380, window);
+        button2.draw(710, 180, 280, 380, window);
         window.display();
     }
 }
@@ -312,6 +453,61 @@ void telev(
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture)
 {
+    Text text1;
+    Text text2;
+    Text text3;
+    Text text4;
+    Text text5;
+    Text text6;
+    Text text7;
+    Text text8;
+    Text text9;
+    Text text10;
+    Text text11;
+    Text text12;
+    Text text13;
+    Font font;
+    if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
+        return;
+    text1.setFont(font);
+    text1.setPosition(333.f, 65.f);
+    text1.setString("Answer these questions");
+    text2.setFont(font);
+    text2.setPosition(40.f, 120.f);
+    text2.setString("Desired price?");
+    text3.setFont(font);
+    text3.setPosition(370.f, 120.f);
+    text3.setString("Amount of channels?");
+    text4.setFont(font);
+    text4.setPosition(710.f, 120.f);
+    text4.setString("Amount of HD?");
+    text5.setFont(font);
+    text5.setPosition(105.f, 180.f);
+    text5.setString("0-600");
+    text6.setFont(font);
+    text6.setPosition(105.f, 280.f);
+    text6.setString("600-1000");
+    text7.setFont(font);
+    text7.setPosition(105.f, 380.f);
+    text7.setString("1000-3000");
+    text8.setFont(font);
+    text8.setPosition(435.f, 180.f);
+    text8.setString("0-100");
+    text9.setFont(font);
+    text9.setPosition(435.f, 280.f);
+    text9.setString("100-200");
+    text10.setFont(font);
+    text10.setPosition(435.f, 380.f);
+    text10.setString("200-300");
+    text11.setFont(font);
+    text11.setPosition(775.f, 180.f);
+    text11.setString("0-20");
+    text12.setFont(font);
+    text12.setPosition(775.f, 280.f);
+    text12.setString("20-40");
+    text13.setFont(font);
+    text13.setPosition(775.f, 380.f);
+    text13.setString("40-100");
     Sprite background(BackgroundTvTexture), Back(ButtonBackTexture),
             Count(ButtonCountTexture);
     radio button;
@@ -337,10 +533,13 @@ void telev(
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (menuNum == 1) {
                 isMenu = 5;
+                GiveRes cnt;
+                cnt.tv_get_ans(button, button1, button2);
                 result(window,
                        BackgroundTexture,
                        ButtonExitTexture,
-                       ButtonBackTexture);
+                       ButtonBackTexture,
+                       cnt);
             }
         }
         if (Mouse::isButtonPressed(Mouse::Left)) {
@@ -356,12 +555,25 @@ void telev(
         }
         window.clear();
         window.draw(background);
+        window.draw(text1);
+        window.draw(text2);
+        window.draw(text3);
+        window.draw(text4);
+        window.draw(text5);
+        window.draw(text6);
+        window.draw(text7);
+        window.draw(text8);
+        window.draw(text9);
+        window.draw(text10);
+        window.draw(text11);
+        window.draw(text12);
+        window.draw(text13);
         window.draw(Back);
         window.draw(Count);
         // *izmenit koordinati i dobavit text dlya knopok
-        button.draw(50, 40, 80, 120, window);
-        button1.draw(120, 40, 80, 120, window);
-        button2.draw(190, 40, 80, 120, window);
+        button.draw(40, 180, 280, 380, window);
+        button1.draw(370, 180, 280, 380, window);
+        button2.draw(710, 180, 280, 380, window);
         window.display();
     }
 }
@@ -371,11 +583,19 @@ void result(
         RenderWindow& window,
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture,
-        Texture& ButtonBackTexture)
+        Texture& ButtonBackTexture,
+        GiveRes cnt)
 {
     Sprite background(BackgroundTexture), Exit(ButtonExitTexture),
             Back(ButtonBackTexture);
     int menuNum = 0;
+    Text Res;
+    Font font;
+    if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
+        return;
+    Res.setFont(font);
+    Res.setPosition(20.f, 90.f);
+    Res.setString(cnt.Showtariffs());
     background.setPosition(0, 0);
     Exit.setPosition(420, 500);
     Back.setPosition(40, 500);
@@ -410,6 +630,7 @@ void result(
         }
         window.clear();
         window.draw(background);
+        window.draw(Res);
         window.draw(Exit);
         window.draw(Back);
         window.display();
