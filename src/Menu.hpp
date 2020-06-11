@@ -1,5 +1,6 @@
 #ifndef H_MENU
 #define H_MENU
+#include "logic.cpp"
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
@@ -36,6 +37,7 @@ void result(
         RenderWindow& window,
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture,
-        Texture& ButtonBackTexture);
+        Texture& ButtonBackTexture,
+        GiveRes cnt);
 
 #endif
