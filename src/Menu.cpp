@@ -187,19 +187,8 @@ void inter(
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture)
 {
-    Text text1;
-    Text text2;
-    Text text3;
-    Text text4;
-    Text text5;
-    Text text6;
-    Text text7;
-    Text text8;
-    Text text9;
-    Text text10;
-    Text text11;
-    Text text12;
-    Text text13;
+    Text text1, text2, text3, text4, text5, text6, text7, text8, text9, text10,
+            text11, text12, text13;
     Font font;
     if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
@@ -217,13 +206,13 @@ void inter(
     text4.setString("The presence\nof television?");
     text5.setFont(font);
     text5.setPosition(105.f, 180.f);
-    text5.setString("0-100");
+    text5.setString("0-400");
     text6.setFont(font);
     text6.setPosition(105.f, 280.f);
-    text6.setString("100-500");
+    text6.setString("400-600");
     text7.setFont(font);
     text7.setPosition(105.f, 380.f);
-    text7.setString("500-1000");
+    text7.setString("600-1000");
     text8.setFont(font);
     text8.setPosition(435.f, 180.f);
     text8.setString("0-50");
@@ -321,19 +310,8 @@ void mob(
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture)
 {
-    Text text1;
-    Text text2;
-    Text text3;
-    Text text4;
-    Text text5;
-    Text text6;
-    Text text7;
-    Text text8;
-    Text text9;
-    Text text10;
-    Text text11;
-    Text text12;
-    Text text13;
+    Text text1, text2, text3, text4, text5, text6, text7, text8, text9, text10,
+            text11, text12, text13;
     Font font;
     if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
@@ -453,19 +431,8 @@ void telev(
         Texture& BackgroundTexture,
         Texture& ButtonExitTexture)
 {
-    Text text1;
-    Text text2;
-    Text text3;
-    Text text4;
-    Text text5;
-    Text text6;
-    Text text7;
-    Text text8;
-    Text text9;
-    Text text10;
-    Text text11;
-    Text text12;
-    Text text13;
+    Text text1, text2, text3, text4, text5, text6, text7, text8, text9, text10,
+            text11, text12, text13;
     Font font;
     if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
