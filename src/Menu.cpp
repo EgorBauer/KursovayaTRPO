@@ -119,7 +119,6 @@ void menu(RenderWindow& window) // risuem Glavnoe Menu
     }
 }
 
-// Menu developers risuem
 void dev(
         RenderWindow& window,
         Texture& BackgroundDevelopersTexture,
@@ -131,7 +130,7 @@ void dev(
     if (!font.loadFromFile("thirdparty/font/StyloBold.TTF"))
         return;
     text1.setFont(font);
-    text1.setPosition(240.f, 240.f);
+    text1.setPosition(190.f, 220.f);
     text1.setString(
             "Nikita Moniev: Developer of program logic\n\nEgor Bauer: Graphic "
             "developer\n\nArtem Ivanov: Test coverage developer");
@@ -197,7 +196,7 @@ void inter(
     text1.setString("Answer these questions");
     text2.setFont(font);
     text2.setPosition(40.f, 120.f);
-    text2.setString("Desired price?");
+    text2.setString("Desired price?(RUB)");
     text3.setFont(font);
     text3.setPosition(370.f, 120.f);
     text3.setString("Internet Speed?");
@@ -294,7 +293,6 @@ void inter(
         window.draw(text13);
         window.draw(Back);
         window.draw(Count);
-        // *izmenit koordinati i dobavit text dlya knopok
         button.draw(40, 180, 280, 380, window);
         button1.draw(370, 180, 280, 380, window);
         button2.draw(710, 180, 280, 380, window);
@@ -320,7 +318,7 @@ void mob(
     text1.setString("Answer these questions");
     text2.setFont(font);
     text2.setPosition(40.f, 120.f);
-    text2.setString("Desired price?");
+    text2.setString("Desired price?(RUB)");
     text3.setFont(font);
     text3.setPosition(370.f, 120.f);
     text3.setString("Amount of gigabytes?");
@@ -441,7 +439,7 @@ void telev(
     text1.setString("Answer these questions");
     text2.setFont(font);
     text2.setPosition(40.f, 120.f);
-    text2.setString("Desired price?");
+    text2.setString("Desired price?(RUB)");
     text3.setFont(font);
     text3.setPosition(370.f, 120.f);
     text3.setString("Amount of channels?");
@@ -537,7 +535,6 @@ void telev(
         window.draw(text13);
         window.draw(Back);
         window.draw(Count);
-        // *izmenit koordinati i dobavit text dlya knopok
         button.draw(40, 180, 280, 380, window);
         button1.draw(370, 180, 280, 380, window);
         button2.draw(710, 180, 280, 380, window);
@@ -545,7 +542,7 @@ void telev(
     }
 }
 
-// Posledneya menu dobavti vivod podhodyashevo tarifa v vide teksta
+// Posledneya menu
 void result(
         RenderWindow& window,
         Texture& BackgroundTexture,
@@ -563,6 +560,7 @@ void result(
     Res.setFont(font);
     Res.setPosition(20.f, 90.f);
     Res.setString(cnt.Showtariffs());
+    Res.setLetterSpacing(1);
     background.setPosition(0, 0);
     Exit.setPosition(420, 500);
     Back.setPosition(40, 500);
