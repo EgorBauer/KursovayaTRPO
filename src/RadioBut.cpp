@@ -28,6 +28,33 @@ public:
         but1.setPosition(x1, y1);
         but2.setPosition(x2, y2);
         but3.setPosition(x3, y3);
+        if (Mouse::isButtonPressed(Mouse::Left)) {
+            if (IntRect(x1, y1, 47, 47).contains(Mouse::getPosition(window))) {
+                menuNumSet(1);
+            }
+            if (IntRect(x2, y2, 47, 47).contains(Mouse::getPosition(window))) {
+                menuNumSet(2);
+            }
+            if (IntRect(x3, y3, 47, 47).contains(Mouse::getPosition(window))) {
+                menuNumSet(3);
+            }
+        }
+
+        if (menuNumGet() == 1) {
+            but1.setColor(Color::Red);
+            but2.setColor(Color::White);
+            but3.setColor(Color::White);
+        }
+        if (menuNumGet() == 2) {
+            but2.setColor(Color::Red);
+            but1.setColor(Color::White);
+            but3.setColor(Color::White);
+        }
+        if (menuNumGet() == 3) {
+            but3.setColor(Color::Red);
+            but1.setColor(Color::White);
+            but2.setColor(Color::White);
+        }
 
         window.draw(but1);
         window.draw(but2);
