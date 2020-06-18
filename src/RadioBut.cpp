@@ -10,6 +10,13 @@ private:
     int menuNum = 0;
 
 public:
+    radio()
+    {
+    }
+    radio(int a)
+    {
+        menuNumSet(a);
+    }
     void menuNumSet(int Value)
     {
         menuNum = Value;
