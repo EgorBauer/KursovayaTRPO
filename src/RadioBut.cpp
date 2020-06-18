@@ -4,6 +4,7 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
+using namespace sf;
 class radio {
 private:
     int menuNum = 0;
