@@ -60,6 +60,7 @@ public:
         window.draw(but1);
         window.draw(but2);
         window.draw(but3);
+        return menuNumGet();
     }
 }
 #endif
