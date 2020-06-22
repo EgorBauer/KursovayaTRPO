@@ -27,7 +27,13 @@ public:
         return menuNum;
     }
 
-    int draw(int x1, int y1, int y2, int y3)
+    int
+    draw(int x1,
+         int y1,
+         int y2,
+         int y3,
+         RenderWindow& window,
+         bool CheckPosition)
     {
         Texture RadButtonTexture;
         RadButtonTexture.loadFromFile("image/rad.png");
@@ -36,7 +42,7 @@ public:
         but1.setPosition(x1, y1);
         but2.setPosition(x1, y2);
         but3.setPosition(x1, y3);
-        if (Mouse::isButtonPressed(Mouse::Left)) {
+        if (Mouse::isButtonPressed(Mouse::Left) or CheckPosition) {
             if (IntRect(x1, y1, 47, 47).contains(Mouse::getPosition(window))) {
                 menuNumSet(1);
             }
