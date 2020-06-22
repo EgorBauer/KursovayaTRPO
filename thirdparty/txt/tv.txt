@@ -1,0 +1,15 @@
+Light             890         91          16               
+Optimal           990         105         22               
+Maximal           1140        140         43               
+Transformer       550         227         50               
+Max               850         274         64               
+Premium           2030        293         71               
+PackageS          800         133         20               
+PackageL          900         156         27               
+PackageXXL        1200        194         41 
+MTC_TV            330         135         27
+United            170         151         38
+Extra             350         150         41
+
+
+
