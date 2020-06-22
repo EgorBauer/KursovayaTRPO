@@ -110,9 +110,131 @@ public:
 }
 void mobile_get_ans(radio button, radio button1, radio button2)
 {
+    std::fstream answer2("thirdparty/txt/mobile.txt", std::ios::in);
+    for (int i = 0; i < 20; i++) {
+        std::string temp;
+        getline(answer2, temp);
+        GiveRes::parcer(temp);
+        int grr = 0;
+        int grl = 0;
+        int grr1 = 0;
+        int grl1 = 0;
+        int grr2 = 0;
+        int grl2 = 0;
+
+        if (button.menuNumGet() == 1) {
+            grr = 0;
+            grl = 500;
+        }
+        if (button.menuNumGet() == 2) {
+            grr = 501;
+            grl = 1000;
+        }
+        if (button.menuNumGet() == 3) {
+            grr = 1001;
+            grl = 2001;
+        }
+        if (button1.menuNumGet() == 1) {
+            grr1 = 0;
+            grl1 = 14;
+        }
+        if (button1.menuNumGet() == 2) {
+            grr1 = 15;
+            grl1 = 31;
+        }
+        if (button1.menuNumGet() == 3) {
+            grr1 = 32;
+            grl1 = 100000;
+        }
+        if (button2.menuNumGet() == 1) {
+            grr2 = 0;
+            grl2 = 500;
+        }
+        if (button2.menuNumGet() == 2) {
+            grr2 = 501;
+            grl2 = 1001;
+        }
+        if (button2.menuNumGet() == 3) {
+            grr2 = 1001;
+            grl2 = 10000;
+        }
+        if (grr < ans1 && grl > ans1) {
+            if (grr1 < ans2 && grl1 > ans2) {
+                if (grr2 < ans4 && grl2 > ans4) {
+                    tariffs.push_back(GiveRes::output_str());
+                } else
+                    continue;
+            } else
+                continue;
+        } else
+            continue;
+    }
+
+    answer2.close();
 }
 void tv_get_ans(radio button, radio button1, radio button2)
 {
+    std::fstream answer3("thirdparty/txt/tv.txt", std::ios::in);
+    for (int i = 0; i < 20; i++) {
+        std::string temp;
+        getline(answer3, temp);
+        GiveRes::parcer(temp);
+        int grr = 0;
+        int grl = 0;
+        int grr1 = 0;
+        int grl1 = 0;
+        int grr2 = 0;
+        int grl2 = 0;
+
+        if (button.menuNumGet() == 1) {
+            grr = 0;
+            grl = 600;
+        }
+        if (button.menuNumGet() == 2) {
+            grr = 601;
+            grl = 1000;
+        }
+        if (button.menuNumGet() == 3) {
+            grr = 1001;
+            grl = 6000;
+        }
+        if (button1.menuNumGet() == 1) {
+            grr1 = 0;
+            grl1 = 101;
+        }
+        if (button1.menuNumGet() == 2) {
+            grr1 = 102;
+            grl1 = 199;
+        }
+        if (button1.menuNumGet() == 3) {
+            grr1 = 200;
+            grl1 = 600;
+        }
+        if (button2.menuNumGet() == 1) {
+            grr2 = 0;
+            grl2 = 20;
+        }
+        if (button2.menuNumGet() == 2) {
+            grr2 = 21;
+            grl2 = 39;
+        }
+        if (button2.menuNumGet() == 3) {
+            grr2 = 40;
+            grl2 = 600;
+        }
+        if (grr < ans1 && grl > ans1) {
+            if (grr1 < ans2 && grl1 > ans2) {
+                if (grr2 < ans4 && grl2 > ans4) {
+                    tariffs.push_back(GiveRes::output_str());
+                } else
+                    continue;
+            } else
+                continue;
+        } else
+            continue;
+    }
+
+    answer3.close();
 }
 void parcer(std::string value)
 {
