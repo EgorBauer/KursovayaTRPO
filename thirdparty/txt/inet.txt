@@ -1,0 +1,15 @@
+Advantegeous   349  200  NO  
+Default        400  75   YES 
+Expanded       659  150  YES 
+SuperSpeed     800  300  NO  
+ElGorod_100    790  100  NO  
+ElGorod_250    890  250  NO  
+ElGorod_500    990  500  NO  
+Technological  600  100  YES  
+Cloud          990  200  YES  
+Gaming         890  250  NO  
+Streaming      999  500  NO  
+Family         750  300  YES  
+MTC            650  100  YES  
+MTC(NO_TV)     400  100  NO 
+
