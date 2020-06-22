@@ -6,8 +6,32 @@ class GiveRes {
 private:
     int ans1, ans2, ans4;
     std::string ans3;
+    std::string name;
+    std::vector<std::string> tariffs;
+    std::string Shapka;
 
 public:
+    GiveRes()
+    {
+    }
+    GiveRes(std::string str, int a, int b, std::string c)
+    {
+        nameSet(str);
+        ans1Set(a);
+        ans2Set(b);
+        ans3Set(c);
+    }
+    std::string Showtariffs()
+    {
+        std::string End = Shapka + "\n";
+        if (tariffs.empty()) {
+            return "Tariffs not found \n";
+        }
+        for (unsigned int i = 0; i < tariffs.size(); i++) {
+            End += tariffs[i] + "\n";
+        }
+        return End;
+    }
     void ans1Set(int Value)
     {
         ans1 = Value;
@@ -47,6 +71,7 @@ public:
 
     void internet_get_ans(radio button, radio button1, radio button2)
     {
+        Shapka = " NAME           COST(RUB)      SPEED          TV  \n";
         std::fstream answer1("thirdparty/txt/inet.txt", std::ios::in);
         for (int i = 0; i < 20; i++) {
             std::string temp;
@@ -103,13 +128,12 @@ public:
             } else
                 continue;
         }
+        answer1.close();
     }
-
-    answer1.close();
-}
-}
 void mobile_get_ans(radio button, radio button1, radio button2)
 {
+    Shapka = "NAME            COST(RUB)    INTERNET(GB)  PHONECALLS(min) "
+             "\n";
     std::fstream answer2("thirdparty/txt/mobile.txt", std::ios::in);
     for (int i = 0; i < 20; i++) {
         std::string temp;
@@ -174,6 +198,7 @@ void mobile_get_ans(radio button, radio button1, radio button2)
 }
 void tv_get_ans(radio button, radio button1, radio button2)
 {
+    Shapka = " NAME           COST(RUB)     CHANNELS    HD CHANNELS \n";
     std::fstream answer3("thirdparty/txt/tv.txt", std::ios::in);
     for (int i = 0; i < 20; i++) {
         std::string temp;
@@ -274,4 +299,4 @@ void parcer(std::string value)
     ans3 = time;
     ans4 = strtol(time.c_str(), &pEnd, 10);
 }
-}
+};
