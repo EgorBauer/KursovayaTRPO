@@ -172,4 +172,40 @@ TEST(draw, UncorrectPoint3)
     button.menuNumSet(0);
 }
 
+TEST(output_str, CorrectPars1) 
+{
+    GiveRes tst1("Advantegeous", 349, 200, "NO");
+    ASSERT_EQ(
+            "Advantegeous      349           200           NO",
+            tst1.output_str());
+
+    GiveRes tst2("MySmart", 300, 10, 200);
+    ASSERT_EQ(
+            "MySmart           300           10            200",
+            tst2.output_str());
+
+    GiveRes tst3("Light", 890, 91, 16);
+    ASSERT_EQ(
+            "Light             890           91            16",
+            tst3.output_str());
+}
+
+TEST(output_str, UnCorrectPars1) 
+{
+    GiveRes tst1("Advantegeous", 349, 200, "NO");
+    ASSERT_NE(
+            "Advantegeous      349           200         NO",
+            tst1.output_str());
+
+    GiveRes tst2("MySmart", 300, 10, 200);
+    ASSERT_NE(
+            "MySmart           300           10           200",
+            tst2.output_str());
+
+    GiveRes tst3("Light", 890, 91, 16);
+    ASSERT_NE(
+            "Light             890           91           16",
+            tst3.output_str());
+}
+
 }
