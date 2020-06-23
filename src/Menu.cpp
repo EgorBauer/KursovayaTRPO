@@ -293,9 +293,9 @@ void inter(
         window.draw(text13);
         window.draw(Back);
         window.draw(Count);
-        button.draw(40, 180, 280, 380, window);
-        button1.draw(370, 180, 280, 380, window);
-        button2.draw(710, 180, 280, 380, window);
+        button.draw(40, 180, 280, 380, window, false);
+        button1.draw(370, 180, 280, 380, window, false);
+        button2.draw(710, 180, 280, 380, window, false);
         window.display();
     }
 }
@@ -414,9 +414,9 @@ void mob(
         window.draw(text13);
         window.draw(Back);
         window.draw(Count);
-        button.draw(40, 180, 280, 380, window);
-        button1.draw(370, 180, 280, 380, window);
-        button2.draw(710, 180, 280, 380, window);
+        button.draw(40, 180, 280, 380, window, false);
+        button1.draw(370, 180, 280, 380, window, false);
+        button2.draw(710, 180, 280, 380, window, false);
         window.display();
     }
 }
@@ -535,9 +535,9 @@ void telev(
         window.draw(text13);
         window.draw(Back);
         window.draw(Count);
-        button.draw(40, 180, 280, 380, window);
-        button1.draw(370, 180, 280, 380, window);
-        button2.draw(710, 180, 280, 380, window);
+        button.draw(40, 180, 280, 380, window, false);
+        button1.draw(370, 180, 280, 380, window, false);
+        button2.draw(710, 180, 280, 380, window, false);
         window.display();
     }
 }
