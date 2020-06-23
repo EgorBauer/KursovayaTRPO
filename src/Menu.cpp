@@ -2,7 +2,7 @@
 
 int isMenu = 0;
 
-void menu(RenderWindow& window) // risuem Glavnoe Menu
+void menu(RenderWindow& window)
 {
     Texture BackgroundTexture, ButtonInternetTexture, ButtonMobileTexture,
             ButtonTvTexture, ButtonDevelopersTexture, ButtonExitTexture,
@@ -542,7 +542,6 @@ void telev(
     }
 }
 
-// Posledneya menu
 void result(
         RenderWindow& window,
         Texture& BackgroundTexture,
@@ -560,7 +559,6 @@ void result(
     Res.setFont(font);
     Res.setPosition(20.f, 90.f);
     Res.setString(cnt.Showtariffs());
-    Res.setLetterSpacing(1);
     background.setPosition(0, 0);
     Exit.setPosition(420, 500);
     Back.setPosition(40, 500);
