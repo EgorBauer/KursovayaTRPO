@@ -1,3 +1,4 @@
+.PHONY: clean all 
 all: bin/Work
 
 bin/Work: build/Main.o build/Menu.o 
@@ -15,3 +16,6 @@ build/RadioBut.o: src/RadioBut.cpp
 build/logic.o: build/RadioBut.o src/logic.cpp 
 	g++ -std=c++11 -Wall -Werror -c src/logic.cpp -o build/src/logic.o  
 	
+clean:
+	rm -rf build/src/*.o bin/Work
+
