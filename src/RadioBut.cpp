@@ -75,5 +75,5 @@ public:
         window.draw(but3);
         return menuNumGet();
     }
-}
+};
 #endif
